@@ -3,15 +3,15 @@
 Для лучшего эффекта нужно делать фото в хорошо освещённом помещении.
 # Использование
 Клонировать репозиторий:
-```bazaar
-git clone 
+```
+git clone https://github.com/Processori7/Emotion_recognition.git
 ```
 Перейти в каталог:
-```bazaar
+```
 cd Emotion_recognition
 ```
 Создать виртуальное окружение:
-```bazaar
+```
 python -m venv venv
 ```
 Активировать окружение:
