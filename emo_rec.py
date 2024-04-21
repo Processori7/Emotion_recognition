@@ -32,6 +32,8 @@ def take_photo():
             # Сохраняем изображение в папку img
             cv2.imwrite(os.path.join('img', new_file_name), frame)
             print(f"Фотография сохранена как {new_file_name}")
+            # Закрываем камеру
+            cap.release()
             analyze(f"img\{new_file_name}")
         else:
             print("Ошибка при считывании кадра")
