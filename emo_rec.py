@@ -87,18 +87,22 @@ def show_list_images():
         if os.path.exists('img'):
             # Получаем список файлов в папке 'img'
             files = os.listdir('img')
-            # Выводим список файлов
-            for i, file in enumerate(files, start=1):
-                print(f"{i} - {file}")
+            if len(files) > 0:
+                # Выводим список файлов
+                for i, file in enumerate(files, start=1):
+                    print(f"{i} - {file}")
 
-            # Запрашиваем у пользователя выбор файла
-            selected_file = int(input("Выберите файл по номеру: ")) - 1
-            # Проверяем, что выбранный файл существует
-            if 0 <= selected_file < len(files):
-                analyze(f"img\{files[selected_file]}")
+                # Запрашиваем у пользователя выбор файла
+                selected_file = int(input("Выберите файл по номеру: ")) - 1
+                # Проверяем, что выбранный файл существует
+                if 0 <= selected_file < len(files):
+                    analyze(f"img\{files[selected_file]}")
+                else:
+                    print("Неверный выбор файла.\n")
+                    show_list_images()
             else:
-                print("Неверный выбор файла.\n")
-                show_list_images()
+                print("Нет файлов в папке!\n")
+                main()
         else:
             print("Папка 'img' не найдена.\n")
             main()
